@@ -25,11 +25,21 @@ h1 {
     counter-reset: section;
 }
 
+h2 {
+    font-size: 2.5rem;
+    margin: 10px 5px 5px 10px;
+}
+
 h3::before {
     counter-increment: section;
     content: counter(section) " ";
 }
 
+h3 {
+    font-size: 2rem;
+    border-bottom: 2px black solid;
+    margin-bottom: 5px;
+}
 
 /* images */
 
@@ -41,6 +51,50 @@ h3::before {
 
 /* lists */
 
+nav {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 96, 160);
+    background-color: whitesmoke;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+#navList {
+    list-style-type: none;
+}
+
+#navList ul {
+    padding-left: 15px;
+    list-style-type: none;
+}
+
+a[hreflang="it"]::before {
+    background-image: url('../media/flag-fr.svg');
+    background-size: 16px 12px;
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    content: "";
+}
+
+a[hreflang="fr"]::before {
+    background-image: url('../media/flag-it.svg');
+    background-size: 16px 12px;
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    content:"";
+}
+
+a[hreflang="en"]::before {
+    background-image: url('../media/flag-en.svg');
+    background-size: 16px 12px;
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    content:"";
+}
 
 
 /* table */
