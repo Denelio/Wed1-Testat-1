@@ -243,26 +243,72 @@
     <p class="change">Zuletzt geändert von Petra Summer <time datetime="2016-02-10 14:13">Donnerstag, 11. Februar 2016, 14:13</time></p>
     <h3>Taschenrechner suchen nach Modell</h3>
 
+    <form>
+        <datalist id="search-suggestions">
+            <option value="Mexico Instrument TI 30">Mexico Instrument TI 30</option>
+            <option value="Mexico Instrument TI 32">Mexico Instrument TI 32</option>
+            <option value="Mexico Instrument D*D">Mexico Instrument D*D</option>
+            <option value="Casino UX5">Casino UX5</option>
+            <option value="Casino TZZ">Casino TZZ</option>
+            <option value="Casino Basic">Casino Basic</option>
+            <option value="HG Calc++">HG Calc++</option>
+            <option value="HG Productive">HG Productive</option>
+            <option value="HG GO-ON">HG GO-ON</option>
+        </datalist>
+        <input type="search" list="search-suggestions" id="search-term" aria-label="search term"/>
+        <button class="search-icon" type="submit">
+            Search
+        </button>
+    </form>
+
 
     <h2>Neuen Autor egistrieren</h2>
 
     <form>
         <fieldset>
             <legend>Autor:</legend>
-            Herr <input type="radio" name="gender" value="male"><br>
-            Frau <input type="radio" name="gender" value="female"><br>
-            Name <input type="text"><br>
-            Email <input type="text"><br>
-            Webseite <input type="text"><br>
-            Geburtsdatum <input type="text"><br>
-            <select>
+            <label>Herr <input type="radio" name="gender" value="male"><br></label>
+            <label>Frau <input type="radio" name="gender" value="female"><br></label>
+            <label>Name <input type="text"><br></label>
+            <label>Email <input type="text"><br></label>
+            <label>Webseite <input type="text"><br></label>
+            <label>Geburtsdatum <input type="text"><br></label>
+            <label><select>
                 <option value="Switzerland">Switzerland</option>
                 <option value="Deutschland">Deutschland</option>
                 <option value="Frankreich">Frankreich</option>
                 <option value="Italien">Italien</option>
                 <option value="Österreich">Österreich</option>
-            </select>
+            </select><br></label>
+            <label>Profiltext<textarea name="text" rows="10" cols="100"></textarea><br></label>
+            <label>Profilbilder <input type="file" name="images"/></label>
         </fieldset>
+
+
+        <fieldset>
+            <legend>Rechtliches</legend>
+            <label><input type="checkbox" name="uText"> Ich bestätige, das ich der Urheber des Textes bin <br></label>
+            <label><input type="checkbox" name="uBild"> Ich bestätige, das ich der Urheber aller eingereichter Bilder bin <br></label>
+            <label><input type="checkbox" name="tValidity"> Ich bestätige, das der Text nach bestem Treu und glauben der Wahrheit entspricht und die Bilder nicht manipuliert wurden <br></label>
+        </fieldset>
+
+        <button type="submit">Account anlegen</button>
+        <button type="reset">Eingaben zurücksetzen</button>
     </form>
 </main>
+<footer>
+    <address>Bahnhofstrasse 42, 8000 Zürich</address>
+    <p>
+        <a href="tel:+41554443322">055 444 33 22</a>
+        <a href="mailto:info@wikipraktika.com">info@wikipraktika.com</a>
+    </p>
+    <small>
+        Alle Inhalte von <i>Wikipraktika</i> stehen unter der
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Logo Creativecommons" width="88"
+                 height="31"/>
+            Creative Commons Attribution-ShareAlike 4.0 International License</a>
+        und dürfen nur mit Nennung des Autors weiterverwendet werden.
+    </small>
+</footer>
 </body>
