@@ -12,20 +12,12 @@
 body {
     font-size: 1rem;
     font-family: "URW Gothic L", "Helvetica", "Arial", sans-serif;
-    margin: 10px 5px 5px 10px;
+    margin: 5px 10px 5px 10px;
     counter-reset: section;
 }
 
 
 /* headings */
-h1 {
-    color: white;
-    background: rgb(0, 96, 160);
-    padding: 1rem;
-    margin: -1rem -1rem 1rem -1rem;
-    counter-reset: section;
-}
-
 h2 {
     font-size: 2.5rem;
     margin: 10px 5px 5px 0px;
@@ -42,13 +34,36 @@ h3 {
     margin-bottom: 5px;
 }
 
-/* images */
-#calculatorImage {
-    max-width: 20%;
-    height: auto;
-    float: left;
+header {
+    background: rgb(0, 96, 160);
+    height: 75px;
+    color: white;
+    margin-bottom: 55px;
 }
 
+header * {
+    display: inline-block;
+}
+
+header img {
+    padding: 5px 5px 5px 5px;
+}
+
+header h1 {
+    vertical-align: top;
+    margin-top: 15px;
+    font-size: 3em;
+}
+
+/* images */
+figure {
+    float: left;
+    max-width: 30%;
+}
+
+#calculatorImage {
+    max-width: 60%;
+}
 
 /* text */
 p {
