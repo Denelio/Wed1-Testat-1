@@ -19,7 +19,7 @@ body {
 
 /* headings */
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin: 10px 5px 5px 0px;
 }
 
@@ -29,9 +29,10 @@ h3::before {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-bottom: 2px black solid;
-    margin-bottom: 5px;
+    margin-bottom: 0.8rem;
+    margin-top: 1rem;
 }
 
 header {
@@ -65,11 +66,41 @@ figure {
     max-width: 60%;
 }
 
+figcaption {
+    font-size: 0.9rem;
+    color: grey;
+    display: block;
+}
+
+iframe {
+    width: calc(55vw - 2rem);
+    height: calc(56.25vw - 2rem);
+    border: none;
+}
+
 /* text */
 p {
     margin-bottom: 1rem;
 }
 
+.change {
+    font-style: italic;
+    padding: 0.3rem;
+    border: thin dashed;
+    margin-top: 1rem;
+}
+
+.change > time {
+    float: right;
+}
+
+figcaption > a {
+    color: black;
+}
+
+small{
+    padding-top: 1rem;
+}
 
 /* lists */
 
@@ -96,7 +127,7 @@ a:hover {
 }
 
 a[hreflang="it"]::before {
-    background-image: url('../media/flag-fr.svg');
+    background-image: url('../../media/flag-fr.svg');
     background-size: 16px 12px;
     display: inline-block;
     width: 16px;
@@ -106,7 +137,7 @@ a[hreflang="it"]::before {
 }
 
 a[hreflang="fr"]::before {
-    background-image: url('../media/flag-it.svg');
+    background-image: url('../../media/flag-it.svg');
     background-size: 16px 12px;
     display: inline-block;
     width: 16px;
@@ -116,7 +147,7 @@ a[hreflang="fr"]::before {
 }
 
 a[hreflang="en"]::before {
-    background-image: url('../media/flag-en.svg');
+    background-image: url('../../media/flag-en.svg');
     background-size: 16px 12px;
     display: inline-block;
     width: 16px;
