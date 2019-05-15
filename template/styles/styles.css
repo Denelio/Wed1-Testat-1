@@ -84,9 +84,9 @@ video, object {
     height: auto;
 }
 
-iframe {
+figure > iframe {
     width: 100%;
-    height: calc(56.25vw - 10vw);
+    height: calc(56.25vw - 2rem);
 }
 
 figure {
@@ -108,7 +108,7 @@ figcaption {
     max-width: 60%;
 }
 
-#demonstration > iframe{
+#demonstration > figure > iframe{
     width: calc(50vw - 4rem);
 }
 
@@ -154,7 +154,7 @@ nav {
     border-width: 2px;
     border-color: rgb(0, 96, 160);
     background-color: whitesmoke;
-    margin: 5px 5px 0px -5px;
+    margin: 5px 5px 0px 5px;
     padding: 5px 5px 5px 5px;
 }
 
@@ -301,6 +301,9 @@ input[type=radio], input[type=checkbox]{
 
 }
 
+input:required:focus:invalid{
+    border-color: red;
+}
 
 #autor select{
     border: 1px solid grey;
