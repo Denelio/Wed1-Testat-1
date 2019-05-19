@@ -105,7 +105,8 @@ figcaption {
 }
 
 #calculatorImage {
-    max-width: 60%;
+    max-width: 100%;
+    padding-right: 1rem;
 }
 
 #demonstration > figure > iframe{
