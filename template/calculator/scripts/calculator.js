@@ -10,39 +10,57 @@ class Calculator {
         this.operand = _operand;
     }
 
-    set retOperand(newOperand){
+    // gemäss airbnb style guide für getter/setter
+    setOperand(newOperand){
         this.operand = newOperand;
-
     }
 
-    set retNumber1(newNumber1){
-        this.number1 = newNumber1;
-    }
-
-    get retOperand(){
+    getOperand(){
         return this.operand;
     }
 
-    get retNumber1() {
+    setNumber1(newNumber1){
+        this.number1 = newNumber1;
+    }
+
+    getNumber1() {
         return this.number1;
     }
 
-    calculate(number1,n2){
+    setNumber2(newNumber2){
+        this.number2 = newNumber2;
+    }
 
-        var n1 = number1.split(" ");
+    getNumber2() {
+        return this.number2;
+    }
+
+    swap(newNumber) {
+        if(this.number1 == undefined){
+            this.number1 = newNumber;
+        }
+    }
+
+    clearVar() {
+        this.number1 = undefined;
+        this.number2 = undefined;
+        this.operand = undefined;
+    }
+
+    calculate(){
 
         switch (this.operand) {
             case "+":
                 console.log("+");
-                return parseInt(n1) + parseInt(n2);
+                return Number(this.number1) + Number(this.number2);
             case "-":
                 console.log("-");
-                return parseInt(n1) - parseInt(n2);
+                return Number(this.number1) - Number(this.number2);
             case "/":
                 console.log("/");
-                return parseInt(n1) / parseInt(n2);
+                return Number(this.number1) / Number(this.number2);
             case "*":
-                return parseInt(n1) * parseInt(n2);
+                return Number(this.number1) * Number(this.number2);
             default:
                 console.log("unknown operation");
                 break;
@@ -60,32 +78,29 @@ function clear() {
     document.getElementById("input").innerHTML = "";
     document.getElementById("output").innerHTML = "";
 
-    console.log(calculator.retNumber1);
+    calculator.clearVar();
 }
 
 function operator(event) {
-    let input = document.getElementById("input");
     let output = document.getElementById("output");
 
-    calculator.retOperand = event.target.value;
+    calculator.setOperand(event.target.value);
+    calculator.swap(calculator.getNumber2());
 
-    output.value = input.value + " " + calculator.retOperand;
+    output.value = calculator.getNumber1() + " " + calculator.getOperand();
     document.getElementById("input").innerHTML = "";
 
 }
 
 function runCalc(){
-    let number1 = document.getElementById("output").value;
-    let number2 = document.getElementById("input").value;
-
-    clear();
-    calculator.retNumber1 = document.getElementById("input").innerHTML = calculator.calculate(number1, number2);
+    document.getElementById("output").innerHTML = "";
+    calculator.setNumber1(document.getElementById("input").innerHTML = calculator.calculate());
 
 }
 
 function number(event) {
     let number = document.getElementById("input");
-    number.value += event.target.value;
+    calculator.setNumber2(number.value += event.target.value);
 }
 
 
