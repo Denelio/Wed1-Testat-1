@@ -36,7 +36,7 @@ class Calculator {
     }
 
     swap(newNumber) {
-        if(this.number1 == undefined){
+        if(this.number1 === undefined){
             this.number1 = newNumber;
         }
     }
@@ -47,17 +47,29 @@ class Calculator {
         this.operand = undefined;
     }
 
+    hasError() {
+        if(this.operand === "/" && this.number2 === "0") {
+            return true;
+        }
+
+        if(this.number1 === undefined){
+            return true;
+        }
+
+        return false;
+    }
+
     calculate(){
+        if(this.hasError()){
+            return "invalid callculation!";
+        }
 
         switch (this.operand) {
             case "+":
-                console.log("+");
                 return Number(this.number1) + Number(this.number2);
             case "-":
-                console.log("-");
                 return Number(this.number1) - Number(this.number2);
             case "/":
-                console.log("/");
                 return Number(this.number1) / Number(this.number2);
             case "*":
                 return Number(this.number1) * Number(this.number2);
@@ -127,7 +139,15 @@ window.addEventListener('DOMContentLoaded', function() {
  * Tests Scenarios
  */
 const testCalc = new Calculator();
-console.log(""/*TODO*/, "should be", 17);
-console.log(""/*TODO*/, "should be", 15);
-console.log(""/*TODO*/, "should be", 30);
-console.log(""/*TODO*/, "should be", true); // true = hasError
+testCalc.setNumber1("20");
+testCalc.setNumber2("3");
+testCalc.setOperand("-");
+console.log(testCalc.calculate(), "should be", 17);
+testCalc.setNumber2("5");
+console.log(testCalc.calculate(), "should be", 15);
+testCalc.setNumber2("10");
+testCalc.setOperand("+");
+console.log(testCalc.calculate(), "should be", 30);
+testCalc.setNumber2("0");
+testCalc.setOperand("/");
+console.log(testCalc.hasError(), "should be", true); // true = hasError
