@@ -25,6 +25,7 @@ main{
     width: 100%;
     line-height: 2rem;
     margin-top: 2rem;
+    padding-left: 0.5rem;
     background-color: rgb(0, 96, 160);
     color: white;
 }
@@ -80,7 +81,7 @@ h3 {
 /* images */
 
 video, object {
-    width: 100%;
+    width: 70%;
     height: auto;
 }
 
@@ -110,7 +111,7 @@ figcaption {
 }
 
 #demonstration > figure > iframe{
-    width: calc(50vw - 4rem);
+    width: calc(56vw - 4rem);
 }
 
 #zeitgewinn-graf {
@@ -123,6 +124,10 @@ figcaption {
 /* text */
 p {
     margin-bottom: 1rem;
+}
+
+#bestandworst > p {
+    margin-bottom: 0.5rem;
 }
 
 .change {

@@ -129,7 +129,6 @@ function number(event) {
     calculator.setNumber2(number.value += event.target.value);
 }
 
-
 window.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById("output").innerHTML = "Welcome!";
