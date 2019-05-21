@@ -38,6 +38,7 @@ class Calculator {
     swap(newNumber) {
         if(this.number1 === undefined){
             this.number1 = newNumber;
+            this.number2 = undefined;
         }
     }
 
@@ -99,14 +100,27 @@ function operator(event) {
     calculator.setOperand(event.target.value);
     calculator.swap(calculator.getNumber2());
 
-    output.value = calculator.getNumber1() + " " + calculator.getOperand();
-    document.getElementById("input").innerHTML = "";
-
+    //to match video
+    if(calculator.getNumber1() === undefined){
+        output.value = calculator.getOperand();
+    } else if(calculator.getNumber2() === undefined) {
+        output.value = calculator.getNumber1() + " " + calculator.getOperand();
+        document.getElementById("input").innerHTML = "";
+    } else {
+        output.value = calculator.getNumber1() + " " + calculator.getOperand();
+    }
 }
 
 function runCalc(){
-    document.getElementById("output").innerHTML = "";
-    calculator.setNumber1(document.getElementById("input").innerHTML = calculator.calculate());
+    //to match video
+    if(calculator.calculate() === "invalid callculation!"){
+        document.getElementById("output").innerHTML = calculator.calculate();
+        calculator.clearVar();
+    }else {
+        document.getElementById("output").innerHTML = "";
+        calculator.setNumber1(document.getElementById("input").innerHTML = calculator.calculate());
+        calculator.setNumber2(undefined);
+    }
 
 }
 
